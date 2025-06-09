@@ -61,7 +61,7 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = true })
 
 -- Format with Prettier (or any formatting source in null-ls)
-vim.api.nvim_set_keymap("n", "<leader>f", ":lua vim.lsp.buf.format({ async = true })<CR>", { noremap = true, silent = true })
-
-
+keymap("n", "<leader>f", function()
+  vim.lsp.buf.format({ async = true })
+end, { desc = "Format file" })
 

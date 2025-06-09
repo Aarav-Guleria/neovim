@@ -1,21 +1,17 @@
--- Ensure 'vim' global is defined
-vim = vim or {}
-
--- Set leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Plugin Manager
-require("core.plugins")  -- Loads Lazy.nvim plugins
+require("core.plugins")
 
--- Require separate config files
-require("core.options")        -- Neovim options
-require("core.keymaps")        -- Keybindings
-require("core.autocommands")   -- Auto commands
-require("core.clipboard")      -- Clipboard settings
+require("core.options")
+require("core.keymaps")
+require("core.autocommands")
+require("core.clipboard")
 
 -- LSP setup
-require("plugins.lsp")  -- LSP configuration
-require("plugins.cmp")  -- Autocompletion configuration
+require("plugins.lsp")
+require("plugins.cmp")
 
 -- using 24 bit color
 vim.opt.termguicolors = true

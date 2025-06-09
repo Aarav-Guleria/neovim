@@ -26,7 +26,7 @@ opt.signcolumn = "yes"
 
 opt.backspace = {"start", "eol", "indent"}
 
-
+vim.opt.updatetime = 300
 
 
 

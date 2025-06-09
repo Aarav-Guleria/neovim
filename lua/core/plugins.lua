@@ -1,13 +1,13 @@
 -- lazy.nvim setup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not pcall(vim.loop.fs_stat, lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -16,80 +16,84 @@ require("lazy").setup("plugins")
 
 -- Plugin imports
 return {
-  -- Core utilities
-  { import = "plugins.plenary" },
+    -- neodev
+    { import = "neodev" },
 
-  -- LSP + Linters + Formatters
-  { import = "plugins.lsp" },
-  { import = "plugins.mason" },
-  { import = "plugins.none-ls" },
-  { import = "plugins.eslint" },
+    -- Core utilities
+    { import = "plugins.plenary" },
 
-  -- Autocompletion & Snippets
-  { import = "plugins.cmp" },
-  { import = "plugins.luasnip" },
+    -- LSP + Linters + Formatters
+    { import = "plugins.lsp" },
+    { import = "plugins.mason" },
+    { import = "plugins.none-ls" },
+    { import = "plugins.eslint" },
 
-  -- UI/UX Enhancements
-  { import = "plugins.lualine" },
-  { import = "plugins.bufferline" },
-  { import = "plugins.indent-blankline" },
-  { import = "plugins.neoscroll" },
-  { import = "plugins.autopairs" },
+    -- Autocompletion & Snippets
+    { import = "plugins.cmp" },
+    { import = "plugins.luasnip" },
 
-  -- Syntax highlighting
-  { import = "plugins.treesitter" },
+    -- UI/UX Enhancements
+    { import = "plugins.lualine" },
+    { import = "plugins.bufferline" },
+    { import = "plugins.indent-blankline" },
+    { import = "plugins.neoscroll" },
+    { import = "plugins.autopairs" },
 
-  -- Debugger (DAP)
-  { import = "plugins.dap" },
+    -- Syntax highlighting
+    { import = "plugins.treesitter" },
 
-  -- Java LSP
-  { import = "plugins.jdtls" },
+    -- Conform
+    { import = "plugins.conform" },
 
-  -- Typescript support
-  { import = "plugins.typescript" },
+    -- Debugger (DAP)
+    { import = "plugins.dap" },
 
-  -- HTML, CSS abbreviations
-  { import = "plugins.emmet" },
+    -- Java LSP
+    { import = "plugins.jdtls" },
 
-  -- React snippets
-  { import = "plugins.snippets-react" },
+    -- Typescript support
+    { import = "plugins.typescript" },
 
-  -- Git integrations
-  { import = "plugins.git" },
+    -- HTML, CSS abbreviations
+    { import = "plugins.emmet" },
 
-  -- UI Customizations
-  { import = "plugins.ui" },
+    -- React snippets
+    { import = "plugins.snippets-react" },
 
-  -- Auto tag closing
-  { import = "plugins.autotags" },
+    -- Git integrations
+    { import = "plugins.git" },
 
-  -- Home page
-  { import = "plugins.alpha" },
+    -- UI Customizations
+    { import = "plugins.ui" },
 
-  -- Harpoon
-  { import = "plugins.hapoon"},
+    -- Auto tag closing
+    { import = "plugins.autotags" },
 
-  -- Undotree
-  { import = "plugins.undotree"},
+    -- Home page
+    { import = "plugins.alpha" },
 
-  -- Trouble
-  { import = "trouble.lua"},
+    -- Harpoon
+    { import = "plugins.hapoon" },
 
-  -- ToDo
-  { import = "todo-comments.lua"},
+    -- Undotree
+    { import = "plugins.undotree" },
 
-  -- Test
-  { import = "nvim-test.lua"},
+    -- Trouble
+    { import = "trouble.lua" },
 
-  -- Mini
-  { import = "mini.lua"},
+    -- ToDo
+    { import = "todo-comments.lua" },
 
-  -- Copilot  
-  { import = "copilot"},
+    -- Test
+    { import = "nvim-test.lua" },
 
-  -- Which key 
-  --{ import = "which-key"},
+    -- Mini
+    { import = "mini.lua" },
 
+    -- Copilot
+    { import = "copilot" },
+
+    -- Which key
+    { import = "which-key" },
 
 }
-

@@ -1,39 +1,16 @@
-vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format({ async = true })
-end, { desc = "Format file" })
-
 return {
+
   {
-    "neovim/nvim-lspconfig",
+    "dcampos/cmp-emmet-vim",
     ft = {
-      "html", "css", "scss",
+      "html", "css", "scss", "sass", "less",
       "javascript", "javascriptreact",
       "typescript", "typescriptreact",
+      "vue", "svelte"
     },
-    config = function()
-      local lspconfig = require("lspconfig")
+    dependencies = { "hrsh7th/nvim-cmp" },
+    config = function() --This plugin integrates automatically with nvim-cmp
 
-      lspconfig.emmet_ls.setup({
-        filetypes = {
-          "html", "css", "scss",
-          "javascript", "javascriptreact",
-          "typescript", "typescriptreact",
-        },
-        init_options = {
-          html = {
-            options = {
-              ["bem.enabled"] = true, -- Optional: enable BEM style
-            },
-          },
-        },
-        handlers = {
-          ["textDocument/completion"] = function()
-            -- Do nothing, disable LSP completion to avoid duplication with cmp-emmet
-            return {}
-          end,
-        },
-      })
     end,
   },
 }
-
