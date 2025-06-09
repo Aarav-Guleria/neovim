@@ -1,6 +1,4 @@
--- ================================
--- 🧠 Auto-formatting for Web Dev
--- ================================
+-- autoformatting 
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = { "*.js", "*.ts", "*.tsx", "*.css", "*.html", "*.json" },
     callback = function()
@@ -11,9 +9,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
 })
 
--- ======================================
--- 🧠 Auto-formatting for Java and C/C++
--- ======================================
+--autoformatting for java, c
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = { "*.java", "*.c", "*.h" },
     callback = function()
