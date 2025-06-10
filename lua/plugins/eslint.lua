@@ -12,15 +12,11 @@ return {
     "neovim/nvim-lspconfig",
   },
   config = function()
-    local eslint = require("eslint")
-    eslint.setup({
-      bin = "eslint", -- Or use "eslint_d"
+    require("eslint").setup({
+      bin = "eslint",
       code_actions = {
-        enable = true,
-        apply_on_save = {
-          enable = true,
-          types = { "directive", "problem", "suggestion", "layout" },
-        },
+        enable = false, -- disable auto fixing
+        apply_on_save = { enable = false },
       },
       diagnostics = {
         enable = true,
@@ -28,7 +24,6 @@ return {
       },
     })
 
-    -- Optional keymaps
     vim.api.nvim_create_autocmd("FileType", {
       pattern = {
         "javascript",
@@ -40,9 +35,9 @@ return {
       },
       callback = function()
         local opts = { noremap = true, silent = true, buffer = true }
-        vim.keymap.set("n", "<leader>ef", "<cmd>EslintFixAll<CR>", opts)
         vim.keymap.set("n", "<leader>er", "<cmd>EslintRestart<CR>", opts)
       end,
     })
   end,
 }
+

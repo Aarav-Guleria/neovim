@@ -9,7 +9,7 @@ return {
         require("conform").format({ async = true, lsp_fallback = true })
       end,
       mode = { "n", "v" },
-      desc = "Format buffer with Conform",
+      desc = "Format buffer",
     },
   },
   opts = {
@@ -32,8 +32,6 @@ return {
       cpp = { "clang_format" },
       java = { "google_java_format" },
     },
-
-    -- only format on save for filetypes not listed
     format_on_save = function(bufnr)
       local ft = vim.bo[bufnr].filetype
       local skip = {
@@ -51,7 +49,6 @@ return {
       end
       return { timeout_ms = 500, lsp_fallback = true }
     end,
-
     formatters = {
       stylua = {
         prepend_args = { "--indent-type", "Spaces", "--indent-width", "2" },
@@ -62,7 +59,6 @@ return {
       google_java_format = {},
     },
   },
-
   init = function()
     vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
   end,
