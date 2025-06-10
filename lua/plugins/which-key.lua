@@ -24,11 +24,9 @@ return {
           g = true,
         },
       },
-      -- Updated: operators -> defer
       defer = function(ctx)
         return ctx.mode == "V" or ctx.mode == "<C-V>"
       end,
-      -- Updated: key_labels -> replace
       replace = {
         ["<space>"] = "SPC",
         ["<cr>"] = "RET",
@@ -39,12 +37,10 @@ return {
         separator = "➜",
         group = "+",
       },
-      -- Updated: popup_mappings -> keys
       keys = {
         scroll_down = "<c-d>",
         scroll_up = "<c-u>",
       },
-      -- Updated: window -> win
       win = {
         border = "rounded",
         position = "bottom",
@@ -58,9 +54,7 @@ return {
         spacing = 3,
         align = "left",
       },
-      -- Updated: ignore_missing -> filter
       filter = function(mapping)
-        -- Filter out mappings we want to ignore
         local ignore_patterns = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }
         for _, pattern in ipairs(ignore_patterns) do
           if mapping.desc and string.match(mapping.desc, pattern) then
@@ -70,19 +64,15 @@ return {
         return true
       end,
       show_help = true,
-      -- Updated: triggers must be a table
       triggers = {
         { "<auto>", mode = "nixsotc" },
         { "<leader>", mode = { "n", "v" } },
       },
-      -- Updated: triggers_blacklist -> disable for specific modes/keys
       disable = {
         buftypes = {},
         filetypes = { "TelescopePrompt" },
       },
     })
-
-    -- Updated: Use new spec format with wk.add instead of wk.register
     wk.add({
       { "<leader>b", group = "Buffer" },
       { "<leader>c", group = "Code" },

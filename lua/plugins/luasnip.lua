@@ -8,12 +8,10 @@ return {
     config = function()
       local luasnip = require("luasnip")
 
-      -- Load custom Lua snippets
       require("luasnip.loaders.from_lua").lazy_load({
         paths = vim.fn.stdpath("config") .. "/lua/snippets",
       })
 
-      -- Load friendly-snippets (VS Code style)
       require("luasnip.loaders.from_vscode").lazy_load()
 
       luasnip.config.set_config({
@@ -24,4 +22,3 @@ return {
     end,
   },
 }
-

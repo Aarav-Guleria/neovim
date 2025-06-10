@@ -22,7 +22,7 @@ return {
     })
     vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", {})
     vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", {})
-    vim.keymap.set("n", "<leader>bd", ":Bdelete<CR>", {desc = "Close buffer"}) --needs bbye plugin (not intalled)
+    vim.keymap.set("n", "<leader>bd", ":Bdelete<CR>", {desc = "Close buffer"})
   end,
 	enabled = true;
 }

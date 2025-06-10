@@ -1,37 +1,33 @@
 local opt = vim.opt
 
-opt.number = true              -- Enable line numbers
-opt.relativenumber = true      -- Enable relative line numbers
-opt.termguicolors = true -- Ensure true color support
+-- Line numbers
+opt.number = true
+opt.relativenumber = true
 
-opt.breakindent = true
+-- Indentation
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
+opt.expandtab = true
 opt.smartindent = true
 opt.autoindent = true
-opt.expandtab = true
-opt.smarttab = true
-opt.cursorline = true
 
-opt.undofile = true
+-- Search
 opt.ignorecase = true
 opt.smartcase = true
+opt.incsearch = true
+opt.hlsearch = false
 
+-- Appearance
+opt.termguicolors = true
+opt.cursorline = true
+opt.signcolumn = "yes"
+opt.scrolloff = 8
 opt.splitright = true
 opt.splitbelow = true
-opt.incsearch = true
-opt.scrolloff = 8
-opt.signcolumn = "yes"
 
-opt.backspace = {"start", "eol", "indent"}
-
-vim.opt.updatetime = 300
-
-
-
---color theme
---vim.cmd("hi Normal guibg=#181825 ctermbg=NONE")   -- Keep a dark background
---vim.cmd("hi NormalNC guibg=#13131A ctermbg=NONE") -- Slightly darker for inactive windows
---vim.cmd("hi EndOfBuffer guibg=#181825 ctermbg=NONE") -- Prevent full transparency
-
+-- Behavior
+opt.undofile = true
+opt.backspace = { "indent", "eol", "start" }
+opt.updatetime = 300
+opt.timeoutlen = 500

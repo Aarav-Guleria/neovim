@@ -26,7 +26,6 @@ return {
             [[                                                                       ]],
         }
 
-        -- Buttons (shortcuts)
         dashboard.section.buttons.val = {
             dashboard.button("", ""),
             dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
@@ -36,7 +35,7 @@ return {
             dashboard.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
             dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
         }
-        -- Setup
+
         alpha.setup(dashboard.opts)
     end,
 }

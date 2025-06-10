@@ -7,10 +7,9 @@ return {
       require("cyberdream").setup({
         variant = "dark",
         transparent = false,
-	colors = {
-          bg = "#0d1117",  -- Gives a soft dark background, looks translucent in acrylic mode
-             },
-
+        colors = {
+          bg = "#0d1117",
+        },
         saturation = 1,
         italic_comments = true,
         hide_fillchars = false,
@@ -21,12 +20,9 @@ return {
           telescope = true,
           notify = true,
           mini = true,
-          -- neo-tree is not officially supported yet
         },
       })
-
       --vim.cmd.colorscheme("cyberdream")
     end,
   },
 }
-
